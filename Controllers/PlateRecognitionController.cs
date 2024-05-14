@@ -1,11 +1,13 @@
 ﻿using DetectLicensePlate.Data;
 using DetectLicensePlate.Entities;
 using DetectLicensePlate.Request;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DetectLicensePlate.Controllers
 {
+    [EnableCors("MyPolicy")]
     [Route("api/plate-recognition")]
     [ApiController]
     public class PlateRecognitionController : ControllerBase
@@ -23,7 +25,6 @@ namespace DetectLicensePlate.Controllers
                 return BadRequest(ModelState);
             }
 
-            // Sử dụng HttpClient để gọi API https://api.platerecognizer.com/v1/plate-reader
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("Authorization", "Token 1254320020c337933480bc4fc22da578a072915c");
