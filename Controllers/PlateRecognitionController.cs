@@ -131,7 +131,7 @@ namespace DetectLicensePlate.Controllers
                   Version = plateRecognition.Version,
                   Timestamp = plateRecognition.Timestamp,
               })
-          .OrderBy(item => item.Id).ToListAsync();
+          .OrderByDescending(item => item.Id).ToListAsync();
             return Ok(result);
         }
     }
