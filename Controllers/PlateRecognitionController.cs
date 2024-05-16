@@ -48,7 +48,7 @@ namespace DetectLicensePlate.Controllers
                         var plateRecognition = new PlateRecognition
                         {
                             Filename = result.Filename,
-                            Image = imageData,
+                            Image = "https://us-east-1.linodeobjects.com/platerec-api/uploads/05/16/" + result.Filename,
                             Version = result.Version,
                             Timestamp = result.Timestamp 
                         };

@@ -6,7 +6,7 @@
         public List<PlateResults>? Results { get; set; }
         public string? Filename { get; set; }
 
-        public byte[]? Image { get; set; }
+        public string? Image { get; set; }
         public int? Version { get; set; }
         public string? Timestamp { get; set; }
     }
